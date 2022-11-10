@@ -38,8 +38,10 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
         auxiliary_input.push_back(auxiliary_line);
         auxiliary_alphabet.setSymbolsToAlphabet(auxiliary_input);
         auxiliary_line.clear();
+        std::cout << std::endl;
         std::cout << "Alfabeto del autómata introducido: ";
         auxiliary_alphabet.PrintAlphabet();
+        std::cout << std::endl;
         std::cout << std::endl;
         alphabet_ = auxiliary_alphabet; /// This is the alphabet of the automata.
     } else if (i == 1) {
@@ -48,7 +50,9 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
       if (automata_file_lines_vector[i].size() == 1) {
         initial_state_ = automata_file_lines_vector[i];
       } else {
+        std::cout << std::endl;
         std::cout << "ERROR >>> El autómata no puede tener más de un estado inicial" << std::endl;
+        std::cout << std::endl;
         exit(1); /// Exit with error 1.
       }
       number_of_states_ = std::stoi(automata_file_lines_vector[i]); /// Neccesary to convert into int.
@@ -75,6 +79,7 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
           if (auxiliary_string == "0") {
             std::cout << std::endl;
             std::cout << "El estado " << auxiliary_state.getState() << " no tiene transiciones" << std::endl;
+            std::cout << std::endl;
           } else {
             int auxiliary_number_of_transitions = std::stoi(auxiliary_string);
             auxiliary_state.setNumberTransitions(auxiliary_number_of_transitions);
@@ -84,7 +89,9 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
             std::string auxiliary_string;
             auxiliary_string.push_back(auxiliary_line[j]);
             if (alphabet_.AlphabetComprobation(auxiliary_string) == false) {
+              std::cout << std::endl;
               std::cout << "ERROR >>> El símbolo " << auxiliary_string << " no pertenece al alfabeto del autómata" << std::endl;
+              std::cout << std::endl;
               exit(1); /// Exit with error 1.
             }
             auxiliary_transition.setTransitionSymbol(auxiliary_string);
