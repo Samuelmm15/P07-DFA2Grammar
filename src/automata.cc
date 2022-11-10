@@ -38,11 +38,6 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
         auxiliary_input.push_back(auxiliary_line);
         auxiliary_alphabet.setSymbolsToAlphabet(auxiliary_input);
         auxiliary_line.clear();
-        std::cout << std::endl;
-        std::cout << "Alfabeto del autómata introducido: ";
-        auxiliary_alphabet.PrintAlphabet();
-        std::cout << std::endl;
-        std::cout << std::endl;
         alphabet_ = auxiliary_alphabet; /// This is the alphabet of the automata.
     } else if (i == 1) {
       number_of_states_ = std::stoi(automata_file_lines_vector[i]); /// Neccesary to convert into int.
@@ -55,7 +50,6 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
         std::cout << std::endl;
         exit(1); /// Exit with error 1.
       }
-      number_of_states_ = std::stoi(automata_file_lines_vector[i]); /// Neccesary to convert into int.
     } else { /// This is the part of the automata where the states are created.
       auxiliary_line = automata_file_lines_vector[i];
       auxiliary_line.erase(std::remove(auxiliary_line.begin(), auxiliary_line.end(), ' '), auxiliary_line.end()); 
@@ -119,6 +113,27 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
  */
 Alphabet Automata::getAlphabet() {
   return alphabet_;
+};
+
+void Automata::PrintAutomata() {
+  std::cout << std::endl;
+  std::cout << "Alfabeto del autómata: ";
+  alphabet_.PrintAlphabet();
+  std::cout << std::endl;
+  std::cout << "Número de estados del autómata: " << number_of_states_ << std::endl;
+  std::cout << "Estado inicial del autómata: " << initial_state_ << std::endl;
+  std::cout << std::endl;
+  std::cout << "Estados del autómata: " << std::endl;
+  for (int i = 0; i < states_.size(); i++) {
+    std::cout << "Estado: " << states_[i].getState() << std::endl;
+    if (states_[i].getFinalState() == true) {
+      std::cout << "Estado final: Sí" << std::endl;
+    } else {
+      std::cout << "Estado final: No" << std::endl;
+    }
+    std::cout << "Número de transiciones: " << states_[i].getNumberTransitions() << std::endl;
+    std::cout << std::endl;
+  }
 };
 
 /**

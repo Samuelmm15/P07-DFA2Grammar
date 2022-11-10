@@ -75,6 +75,7 @@ int main(int argc, char** argv) {
     automata_file_content.close();
     /// Automata object creation 
     Automata new_automata(automata_file_lines_vector);
+    new_automata.PrintAutomata();
 
   } else if (argc == 2) {
     std::string option = argv[1];

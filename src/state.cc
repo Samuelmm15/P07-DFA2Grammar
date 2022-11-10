@@ -95,6 +95,10 @@ std::vector<Transition> State::getTransition() {
   return transitions_;
 };
 
+int State::getNumberTransitions() {
+  return number_of_transitions_;
+};
+
 /**
  * @brief This method prints the state and the different information.
  * 

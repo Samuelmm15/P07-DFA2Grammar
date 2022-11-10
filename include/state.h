@@ -36,6 +36,7 @@ class State {
     std::string getState();
     bool getFinalState();
     std::vector<Transition> getTransition();
+    int getNumberTransitions();
     void PrintState();
   private:
     std::string state_;
