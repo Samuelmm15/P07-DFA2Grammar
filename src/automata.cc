@@ -219,11 +219,23 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
       std::string auxiliary_string;
       auxiliary_string.push_back(automata_to_convert.getStates()[i].getState()[0]);
       auxiliary_string.push_back('-');
+      auxiliary_string.push_back('-');
       auxiliary_string.push_back('>');
+      auxiliary_string.push_back(' ');
       auxiliary_string.push_back(automata_to_convert.getStates()[i].getTransition()[j].getTransitionSymbol()[0]);
       auxiliary_string.push_back(automata_to_convert.getStates()[i].getTransition()[j].getTransitionState()[0]);
       productions.push_back(auxiliary_string);
     }
+    if (automata_to_convert.getStates()[i].getFinalState() == true) {
+        std::string auxiliary_string;
+        auxiliary_string.push_back(automata_to_convert.getStates()[i].getState()[0]);
+        auxiliary_string.push_back(' ');
+        auxiliary_string.push_back('-');
+        auxiliary_string.push_back('>');
+        auxiliary_string.push_back(' ');
+        auxiliary_string.push_back('&');
+        productions.push_back(auxiliary_string);
+      }
   }
   auxiliary_grammar.setProductions(productions);
   
