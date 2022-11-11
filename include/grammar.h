@@ -26,6 +26,7 @@ class Grammar {
     void setTerminalSymbols(std::vector<std::string> terminal_symbols);
     void setNonTerminalSymbols(std::vector<std::string> non_terminal_symbols);
     void setInitialSymbol(std::string initial_symbol);
+    void setNumberOfProductions(int number_of_productions);
     void setProductions(std::vector<std::string> productions);
     void PrintGrammar();
     void PrintGrammarToFile(std::string file_name);
@@ -35,5 +36,6 @@ class Grammar {
     int number_of_non_terminal_symbols_;
     std::vector<std::string> non_terminal_symbols_;
     std::string initial_symbol_;
+    int number_of_productions_;
     std::vector<std::string> productions_;
 };

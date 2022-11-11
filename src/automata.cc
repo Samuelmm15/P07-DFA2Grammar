@@ -120,6 +120,10 @@ std::vector<State> Automata::getStates() {
   return states_;
 };
 
+std::string Automata::getInitialState() {
+  return initial_state_;
+};
+
 void Automata::PrintAutomata() {
   std::cout << std::endl;
   std::cout << "Alfabeto del autómata: ";
@@ -189,4 +193,39 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
   auxiliary_grammar.setTerminalSymbols(terminal_symbols);
   /// Determinación de los símbolos no terminales, que corresponden con los estados del automata.
   int number_of_non_terminal_symbols = automata_to_convert.getStates().size();
+  auxiliary_grammar.setNumberOfNonTerminalSymbols(number_of_non_terminal_symbols);
+  /// Determinación de los distintos símbolos no terminales que corresponden los distintos símbolos no terminales de la gramática.
+  std::vector<std::string> non_terminal_symbols;
+  for (int i = 0; i < number_of_non_terminal_symbols; i++) {
+    non_terminal_symbols.push_back(automata_to_convert.getStates()[i].getState());
+  }
+  auxiliary_grammar.setNonTerminalSymbols(non_terminal_symbols);
+
+  /// Determinación del símbolo inicial de la gramática, que corresponde con el estado inicial del automata.
+  std::string initial_symbol = automata_to_convert.getInitialState();
+  auxiliary_grammar.setInitialSymbol(initial_symbol);
+
+  /// Determinación del número de producciones de la gramática.
+  int number_of_productions = 0;
+  for (int i = 0; i < automata_to_convert.getStates().size(); i++) {
+    number_of_productions += automata_to_convert.getStates()[i].getNumberTransitions();
+  }
+  auxiliary_grammar.setNumberOfProductions(number_of_productions);
+
+  /// Determinación de las distintas producciones de la gramática.
+  std::vector<std::string> productions;
+  for (int i = 0; i < automata_to_convert.getStates().size(); i++) {
+    for (int j = 0; j < automata_to_convert.getStates()[i].getNumberTransitions(); j++) {
+      std::string auxiliary_string;
+      auxiliary_string.push_back(automata_to_convert.getStates()[i].getState()[0]);
+      auxiliary_string.push_back('-');
+      auxiliary_string.push_back('>');
+      auxiliary_string.push_back(automata_to_convert.getStates()[i].getTransition()[j].getTransitionSymbol()[0]);
+      auxiliary_string.push_back(automata_to_convert.getStates()[i].getTransition()[j].getTransitionState()[0]);
+      productions.push_back(auxiliary_string);
+    }
+  }
+  auxiliary_grammar.setProductions(productions);
+  
+  return auxiliary_grammar;
 };
