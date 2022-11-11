@@ -116,6 +116,10 @@ Alphabet Automata::getAlphabet() {
   return alphabet_;
 };
 
+std::vector<State> Automata::getStates() {
+  return states_;
+};
+
 void Automata::PrintAutomata() {
   std::cout << std::endl;
   std::cout << "Alfabeto del autómata: ";
@@ -173,5 +177,16 @@ bool Automata::DFAChainsValidation(std::string chain) {
 };
 
 Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
-
+  /// Determinación de los símbolos terminales, que corresponden con el alfabeto del automata.
+  Grammar auxiliary_grammar;
+  int number_of_terminal_symbols = automata_to_convert.getAlphabet().getAlphabet().size();
+  auxiliary_grammar.setNumberOfTerminalSymbols(number_of_terminal_symbols);
+  /// Determinación de los distintos símbolos terminales que corresponden los distintos símbolos terminales de la gramática.
+  std::vector<std::string> terminal_symbols;
+  for (int i = 0; i < number_of_terminal_symbols; i++) {
+    terminal_symbols.push_back(automata_to_convert.getAlphabet().getAlphabet()[i]);
+  }
+  auxiliary_grammar.setTerminalSymbols(terminal_symbols);
+  /// Determinación de los símbolos no terminales, que corresponden con los estados del automata.
+  int number_of_non_terminal_symbols = automata_to_convert.getStates().size();
 };
