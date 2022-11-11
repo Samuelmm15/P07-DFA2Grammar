@@ -19,5 +19,8 @@
 #pragma once
 
 class Grammar {
-
+  public:
+    Grammar();
+    void PrintGrammar();
+    void PrintGrammarToFile(std::string file_name);
 };

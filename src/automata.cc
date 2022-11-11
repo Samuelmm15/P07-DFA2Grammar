@@ -15,6 +15,7 @@
 #include "../include/alphabet.h"
 #include "../include/state.h"
 #include "../include/transition.h"
+#include "../include/grammar.h"
 
 /**
  * @brief This is the constructor of the different automatas objects.
@@ -169,4 +170,8 @@ bool Automata::DFAChainsValidation(std::string chain) {
     }
   }
   return chain_accepted;
+};
+
+Grammar Automata::ConvertToGrammar() {
+
 };

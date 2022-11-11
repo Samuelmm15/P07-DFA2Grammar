@@ -22,6 +22,7 @@
 #include <regex>
 
 #include "../include/automata.h"
+#include "../include/grammar.h"
 
 /**
  * @brief This overload implements the read of the input file.
@@ -76,6 +77,11 @@ int main(int argc, char** argv) {
     /// Automata object creation 
     Automata new_automata(automata_file_lines_vector);
     new_automata.PrintAutomata();
+
+    Grammar new_grammar;
+    new_grammar = new_automata.ConvertToGrammar();
+    new_grammar.PrintGrammar();
+
 
   } else if (argc == 2) {
     std::string option = argv[1];

@@ -10,3 +10,16 @@
  * @copyright Copyright (c) 2022
  * 
  */
+
+#include "../include/grammar.h"
+
+Grammar::Grammar() {
+};
+
+void Grammar::PrintGrammar() {
+  
+};
+
+void Grammar::PrintGrammarToFile(std::string file_name) {
+  
+};
