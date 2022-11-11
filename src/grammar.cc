@@ -63,7 +63,7 @@ void Grammar::PrintGrammar() {
     std::cout << std::endl;
     std::cout << "Símbolo inicial: " << initial_symbol_ << std::endl;
 
-    std::cout << "Producciones: " << std::endl;
+    std::cout << "Producciones: " << std::endl;;
     for (int i = 0; i < productions_.size(); i++) {
       std::cout << productions_[i] << std::endl;
     }
