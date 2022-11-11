@@ -172,6 +172,6 @@ bool Automata::DFAChainsValidation(std::string chain) {
   return chain_accepted;
 };
 
-Grammar Automata::ConvertToGrammar() {
+Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
 
 };

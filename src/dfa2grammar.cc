@@ -79,7 +79,7 @@ int main(int argc, char** argv) {
     new_automata.PrintAutomata();
 
     Grammar new_grammar;
-    new_grammar = new_automata.ConvertToGrammar();
+    new_grammar = new_automata.ConvertToGrammar(new_automata);
     new_grammar.PrintGrammar();
 
 
