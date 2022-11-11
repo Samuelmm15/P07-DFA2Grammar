@@ -214,23 +214,15 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
 
   /// Determinación de las distintas producciones de la gramática.
   std::vector<std::string> productions;
-  std::string previous_state;
   for (int i = 0; i < automata_to_convert.getStates().size(); i++) {
     for (int j = 0; j < automata_to_convert.getStates()[i].getNumberTransitions(); j++) {
       std::string auxiliary_string;
-      if (previous_state != automata_to_convert.getStates()[i].getState()) {
-        auxiliary_string += automata_to_convert.getStates()[i].getState();
-        auxiliary_string += "->";
-        auxiliary_string += automata_to_convert.getStates()[i].getTransition()[j].getTransitionSymbol();
-        auxiliary_string += automata_to_convert.getStates()[i].getTransition()[j].getTransitionState();
-        productions.push_back(auxiliary_string);
-      } else {
-        auxiliary_string += "|";
-        auxiliary_string += automata_to_convert.getStates()[i].getTransition()[j].getTransitionSymbol();
-        auxiliary_string += automata_to_convert.getStates()[i].getTransition()[j].getTransitionState();
-        productions.push_back(auxiliary_string);
-      }
-      previous_state = automata_to_convert.getStates()[i].getState();
+      auxiliary_string.push_back(automata_to_convert.getStates()[i].getState()[0]);
+      auxiliary_string.push_back('-');
+      auxiliary_string.push_back('>');
+      auxiliary_string.push_back(automata_to_convert.getStates()[i].getTransition()[j].getTransitionSymbol()[0]);
+      auxiliary_string.push_back(automata_to_convert.getStates()[i].getTransition()[j].getTransitionState()[0]);
+      productions.push_back(auxiliary_string);
     }
   }
   auxiliary_grammar.setProductions(productions);

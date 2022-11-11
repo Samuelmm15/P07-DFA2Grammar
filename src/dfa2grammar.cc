@@ -50,7 +50,7 @@ int main(int argc, char** argv) {
   if (argc == 3) {
     /// Format of the input files
     std::string automata_file = argv[1];
-    std::string chains_file = argv[2];
+    std::string grammar_file = argv[2];
     std::regex automata__file_regex(".*\\.fa$");
     if (!std::regex_match(automata_file, automata__file_regex)) {
       std::cout << std::endl;
@@ -61,7 +61,7 @@ int main(int argc, char** argv) {
       return 1;
     }
     std::regex grammar_file_regex(".*\\.gra$");
-    if (!std::regex_match(chains_file, grammar_file_regex)) {
+    if (!std::regex_match(grammar_file, grammar_file_regex)) {
       std::cout << std::endl;
       std::cout << "ERROR: El fichero de salida de la gramática generada no tiene el formato de fichero correcto." << std::endl;
       std::cout << "Para más información haga uso de la opción -h o --help" << std::endl;
@@ -81,6 +81,7 @@ int main(int argc, char** argv) {
     Grammar new_grammar;
     new_grammar = new_automata.ConvertToGrammar(new_automata);
     new_grammar.PrintGrammar();
+    new_grammar.PrintGrammarToFile(grammar_file);
 
 
   } else if (argc == 2) {

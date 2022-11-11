@@ -70,5 +70,20 @@ void Grammar::PrintGrammar() {
 };
 
 void Grammar::PrintGrammarToFile(std::string file_name) {
-  
+  std::fstream output_file;
+    output_file.open(file_name, std::ios::out);
+    output_file << number_of_terminal_symbols_ << std::endl;
+    for (int i = 0; i < number_of_terminal_symbols_; i++) {
+      output_file << terminal_symbols_[i] << std::endl;
+    }
+    output_file << number_of_non_terminal_symbols_ << std::endl;
+    for (int i = 0; i < number_of_non_terminal_symbols_; i++) {
+      output_file << non_terminal_symbols_[i] << std::endl;
+    }
+    output_file << initial_symbol_ << std::endl;
+    output_file << number_of_productions_ << std::endl;
+    for (int i = 0; i < productions_.size(); i++) {
+      output_file << productions_[i] << std::endl;
+    }
+    output_file.close();
 };
