@@ -32,6 +32,7 @@ class Automata : public Chain {
     Alphabet getAlphabet();
     std::vector<State> getStates();
     std::string getInitialState();
+    bool IsDFA();
     void PrintAutomata();
     bool DFAChainsValidation(std::string chain);
     Grammar ConvertToGrammar(Automata automata_to_convert);

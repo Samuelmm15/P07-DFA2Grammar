@@ -124,6 +124,15 @@ std::string Automata::getInitialState() {
   return initial_state_;
 };
 
+bool Automata::IsDFA() {
+  for (int i = 0; i < states_.size(); i++) {
+    if (states_[i].getNumberTransitions() != alphabet_.getAlphabet().size()) {
+      return false;
+    }
+  }
+  return true;
+};
+
 void Automata::PrintAutomata() {
   std::cout << std::endl;
   std::cout << "Alfabeto del autómata: ";

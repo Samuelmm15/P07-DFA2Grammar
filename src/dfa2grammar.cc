@@ -78,11 +78,19 @@ int main(int argc, char** argv) {
     Automata new_automata(automata_file_lines_vector);
     new_automata.PrintAutomata();
 
-    Grammar new_grammar;
-    new_grammar = new_automata.ConvertToGrammar(new_automata);
-    new_grammar.PrintGrammar();
-    new_grammar.PrintGrammarToFile(grammar_file);
-
+    /// NFA or DFA comprobation
+    if (new_automata.IsDFA()) {
+      Grammar new_grammar;
+      new_grammar = new_automata.ConvertToGrammar(new_automata);
+      new_grammar.PrintGrammar();
+      new_grammar.PrintGrammarToFile(grammar_file);
+    } else {
+      std::cout << "ERROR >>> No se pudo generar la gramática, debido a que el automata introducido no es un DFA." << std::endl;
+      std::cout << "Para la correcta ejecución del programa introduzca un DFA." << std::endl;
+      std::cout << "Para más información haga uso de la opción -h o --help" << std::endl;
+      std::cout << std::endl;
+      return 2; /// Salida con error de tipo 2
+    }
 
   } else if (argc == 2) {
     std::string option = argv[1];
