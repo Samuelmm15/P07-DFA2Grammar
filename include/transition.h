@@ -1,37 +1,38 @@
 /**
  * @file transition.h
  * @author Samuel Martín Morales (alu0101359526@ull.edu.es)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2022-11-10
  * @signature Computabilidad y Algoritmia.
  * @course 2022-2023.
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
+#include <algorithm>
 #include <iostream>
+#include <sstream>
 #include <string>
 #include <vector>
-#include <sstream>
-#include <algorithm>
 
 #pragma once
 
 /**
  * @brief This class contains the different transitions of the automata.
- * 
+ *
  */
 class Transition {
-  public:
-    Transition();
-    void setTransitionSymbol(std::string transition_symbol);
-    std::string getTransitionSymbol();
-    void setTransitionState(std::string transition);
-    std::string getTransitionState();
-    std::string at();
-  private:
-    std::string transition_symbol_;
-    std::string transition_;
+ public:
+  Transition();
+  void setTransitionSymbol(std::string transition_symbol);
+  std::string getTransitionSymbol();
+  void setTransitionState(std::string transition);
+  std::string getTransitionState();
+  std::string at();
+
+ private:
+  std::string transition_symbol_;
+  std::string transition_;
 };

@@ -1,26 +1,26 @@
 /**
  * @file grammar.cc
  * @author Samuel Martín Morales (alu0101359526@ull.edu.es)
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2022-11-10
  * @signature Computabilidad y Algoritmia.
  * @course 2022-2023.
- * 
+ *
  * @copyright Copyright (c) 2022
- * 
+ *
  */
 
 #include "../include/grammar.h"
 
-Grammar::Grammar() {
-};
+Grammar::Grammar(){};
 
 void Grammar::setNumberOfTerminalSymbols(int number_of_terminal_symbols) {
   number_of_terminal_symbols_ = number_of_terminal_symbols;
 };
 
-void Grammar::setNumberOfNonTerminalSymbols(int number_of_non_terminal_symbols) {
+void Grammar::setNumberOfNonTerminalSymbols(
+    int number_of_non_terminal_symbols) {
   number_of_non_terminal_symbols_ = number_of_non_terminal_symbols;
 };
 
@@ -28,7 +28,8 @@ void Grammar::setTerminalSymbols(std::vector<std::string> terminal_symbols) {
   terminal_symbols_ = terminal_symbols;
 };
 
-void Grammar::setNonTerminalSymbols(std::vector<std::string> non_terminal_symbols) {
+void Grammar::setNonTerminalSymbols(
+    std::vector<std::string> non_terminal_symbols) {
   non_terminal_symbols_ = non_terminal_symbols;
 };
 
@@ -46,44 +47,47 @@ void Grammar::setProductions(std::vector<std::string> productions) {
 
 void Grammar::PrintGrammar() {
   std::cout << "Grmática generada a partir del DFA introducido:" << std::endl;
-    std::cout << "Nº de símbolos terminales: " << number_of_terminal_symbols_ << std::endl;
-    
-    std::cout << "Símbolos terminales: ";
-    for (int i = 0; i < number_of_terminal_symbols_; i++) {
-      std::cout << terminal_symbols_[i] << " ";
-    }
-    
-    std::cout << std::endl;
-    std::cout << "Nº de símbolos no terminales: " << number_of_non_terminal_symbols_ << std::endl;
-    
-    std::cout << "Símbolos no terminales: ";
-    for (int i = 0; i < number_of_non_terminal_symbols_; i++) {
-      std::cout << non_terminal_symbols_[i] << " ";
-    }
-    std::cout << std::endl;
-    std::cout << "Símbolo inicial: " << initial_symbol_ << std::endl;
+  std::cout << "Nº de símbolos terminales: " << number_of_terminal_symbols_
+            << std::endl;
 
-    std::cout << "Producciones: " << std::endl;;
-    for (int i = 0; i < productions_.size(); i++) {
-      std::cout << productions_[i] << std::endl;
-    }
+  std::cout << "Símbolos terminales: ";
+  for (int i = 0; i < number_of_terminal_symbols_; i++) {
+    std::cout << terminal_symbols_[i] << " ";
+  }
+
+  std::cout << std::endl;
+  std::cout << "Nº de símbolos no terminales: "
+            << number_of_non_terminal_symbols_ << std::endl;
+
+  std::cout << "Símbolos no terminales: ";
+  for (int i = 0; i < number_of_non_terminal_symbols_; i++) {
+    std::cout << non_terminal_symbols_[i] << " ";
+  }
+  std::cout << std::endl;
+  std::cout << "Símbolo inicial: " << initial_symbol_ << std::endl;
+
+  std::cout << "Producciones: " << std::endl;
+  ;
+  for (int i = 0; i < productions_.size(); i++) {
+    std::cout << productions_[i] << std::endl;
+  }
 };
 
 void Grammar::PrintGrammarToFile(std::string file_name) {
   std::fstream output_file;
-    output_file.open(file_name, std::ios::out);
-    output_file << number_of_terminal_symbols_ << std::endl;
-    for (int i = 0; i < number_of_terminal_symbols_; i++) {
-      output_file << terminal_symbols_[i] << std::endl;
-    }
-    output_file << number_of_non_terminal_symbols_ << std::endl;
-    for (int i = 0; i < number_of_non_terminal_symbols_; i++) {
-      output_file << non_terminal_symbols_[i] << std::endl;
-    }
-    output_file << initial_symbol_ << std::endl;
-    output_file << number_of_productions_ << std::endl;
-    for (int i = 0; i < productions_.size(); i++) {
-      output_file << productions_[i] << std::endl;
-    }
-    output_file.close();
+  output_file.open(file_name, std::ios::out);
+  output_file << number_of_terminal_symbols_ << std::endl;
+  for (int i = 0; i < number_of_terminal_symbols_; i++) {
+    output_file << terminal_symbols_[i] << std::endl;
+  }
+  output_file << number_of_non_terminal_symbols_ << std::endl;
+  for (int i = 0; i < number_of_non_terminal_symbols_; i++) {
+    output_file << non_terminal_symbols_[i] << std::endl;
+  }
+  output_file << initial_symbol_ << std::endl;
+  output_file << number_of_productions_ << std::endl;
+  for (int i = 0; i < productions_.size(); i++) {
+    output_file << productions_[i] << std::endl;
+  }
+  output_file.close();
 };
