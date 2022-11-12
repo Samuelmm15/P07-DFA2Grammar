@@ -1,0 +1,194 @@
+\hypertarget{classAutomata}{}\doxysection{Automata Class Reference}
+\label{classAutomata}\index{Automata@{Automata}}
+
+
+This class contains the automata of the introduced file.  
+
+
+
+
+{\ttfamily \#include $<$automata.\+h$>$}
+
+
+
+Inheritance diagram for Automata\+:
+% FIG 0
+
+
+Collaboration diagram for Automata\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAutomata_ad0ea831a8391cab9b9de50a6f385c235}{Automata}} (std\+::vector$<$ std\+::string $>$ automata\+\_\+file\+\_\+lines\+\_\+vector)
+\begin{DoxyCompactList}\small\item\em This is the constructor of the different automatas objects. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classAlphabet}{Alphabet}} \mbox{\hyperlink{classAutomata_a1ef8b736c83a82a68369a8c1580e5e06}{get\+Alphabet}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the alphabet of the automata. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classState}{State}} $>$ \mbox{\hyperlink{classAutomata_afa6e604c6c2b9ca6a12f49108ee466fb}{get\+States}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the number of states of the automata. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classAutomata_ab0874f6a278e1f332cb3f28520c193c9}{get\+Initial\+State}} ()
+\begin{DoxyCompactList}\small\item\em This method return the initial state of the automata. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAutomata_afb164a746b2700a0836b6dc6fe2deb72}{Is\+D\+FA}} ()
+\begin{DoxyCompactList}\small\item\em This method comprobe if an automata is a D\+FA or N\+FA automata. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classAutomata_aa5650879cd2a3dc20fc3c0a09408eae5}{Print\+Automata}} ()
+\begin{DoxyCompactList}\small\item\em This method prints the automata into the console. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAutomata_a83cee7109c6433b8dd50f9532e65d6e0}{D\+F\+A\+Chains\+Validation}} (std\+::string chain)
+\begin{DoxyCompactList}\small\item\em This method validates the chains of the automata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classGrammar}{Grammar}} \mbox{\hyperlink{classAutomata_a2ba23ce7e1e20c935bf4992d5cc7180f}{Convert\+To\+Grammar}} (\mbox{\hyperlink{classAutomata}{Automata}} automata\+\_\+to\+\_\+convert)
+\begin{DoxyCompactList}\small\item\em This method converts a N\+FA automata into a grammar. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class contains the automata of the introduced file. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classAutomata_ad0ea831a8391cab9b9de50a6f385c235}\label{classAutomata_ad0ea831a8391cab9b9de50a6f385c235}} 
+\index{Automata@{Automata}!Automata@{Automata}}
+\index{Automata@{Automata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{Automata()}{Automata()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAutomata}{Automata}} (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{automata\+\_\+file\+\_\+lines\+\_\+vector }\end{DoxyParamCaption})}
+
+
+
+This is the constructor of the different automatas objects. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em automata\+\_\+file\+\_\+lines\+\_\+vector} & This is the vector that contains the lines of the automata specifications. \\
+\hline
+\end{DoxyParams}
+This is the alphabet of the automata.
+
+Neccesary to convert into int.
+
+Exit with error 1.
+
+This is the part of the automata where the states are created.
+
+Exit with error 1.
+
+To reload the objects
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classAutomata_a2ba23ce7e1e20c935bf4992d5cc7180f}\label{classAutomata_a2ba23ce7e1e20c935bf4992d5cc7180f}} 
+\index{Automata@{Automata}!ConvertToGrammar@{ConvertToGrammar}}
+\index{ConvertToGrammar@{ConvertToGrammar}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{ConvertToGrammar()}{ConvertToGrammar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGrammar}{Grammar}} Convert\+To\+Grammar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classAutomata}{Automata}}}]{automata\+\_\+to\+\_\+convert }\end{DoxyParamCaption})}
+
+
+
+This method converts a N\+FA automata into a grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em automata\+\_\+to\+\_\+convert} & Is the automata that is going to be converted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classGrammar}{Grammar}} the grammar that was converted from the automata. 
+\end{DoxyReturn}
+First the number of terminal symbols.
+
+Second the terminal symbols.
+
+Third the number of non-\/terminal symbols.
+
+Fordth the non-\/terminal symbols.
+
+Fifth the initial symbol.
+
+Sixth the number of productions.
+
+Seventh the productions.\mbox{\Hypertarget{classAutomata_a83cee7109c6433b8dd50f9532e65d6e0}\label{classAutomata_a83cee7109c6433b8dd50f9532e65d6e0}} 
+\index{Automata@{Automata}!DFAChainsValidation@{DFAChainsValidation}}
+\index{DFAChainsValidation@{DFAChainsValidation}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{DFAChainsValidation()}{DFAChainsValidation()}}
+{\footnotesize\ttfamily bool D\+F\+A\+Chains\+Validation (\begin{DoxyParamCaption}\item[{std\+::string}]{chain }\end{DoxyParamCaption})}
+
+
+
+This method validates the chains of the automata. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em chain} & The chain that is going to be validated. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If the chain is valid. 
+
+false If the chain is not valid. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAutomata_a1ef8b736c83a82a68369a8c1580e5e06}\label{classAutomata_a1ef8b736c83a82a68369a8c1580e5e06}} 
+\index{Automata@{Automata}!getAlphabet@{getAlphabet}}
+\index{getAlphabet@{getAlphabet}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{getAlphabet()}{getAlphabet()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classAlphabet}{Alphabet}} get\+Alphabet (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method returns the alphabet of the automata. 
+
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{classAlphabet}{Alphabet}} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAutomata_ab0874f6a278e1f332cb3f28520c193c9}\label{classAutomata_ab0874f6a278e1f332cb3f28520c193c9}} 
+\index{Automata@{Automata}!getInitialState@{getInitialState}}
+\index{getInitialState@{getInitialState}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{getInitialState()}{getInitialState()}}
+{\footnotesize\ttfamily std\+::string get\+Initial\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method return the initial state of the automata. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string the initial state of the automata. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAutomata_afa6e604c6c2b9ca6a12f49108ee466fb}\label{classAutomata_afa6e604c6c2b9ca6a12f49108ee466fb}} 
+\index{Automata@{Automata}!getStates@{getStates}}
+\index{getStates@{getStates}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{getStates()}{getStates()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classState}{State}} $>$ get\+States (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method returns the number of states of the automata. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+State$>$ the vector of the different states of the automata. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAutomata_afb164a746b2700a0836b6dc6fe2deb72}\label{classAutomata_afb164a746b2700a0836b6dc6fe2deb72}} 
+\index{Automata@{Automata}!IsDFA@{IsDFA}}
+\index{IsDFA@{IsDFA}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{IsDFA()}{IsDFA()}}
+{\footnotesize\ttfamily bool Is\+D\+FA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method comprobe if an automata is a D\+FA or N\+FA automata. 
+
+\begin{DoxyReturn}{Returns}
+true if it is a D\+FA automata. 
+
+false if it is a N\+FA automata. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classAutomata_aa5650879cd2a3dc20fc3c0a09408eae5}\label{classAutomata_aa5650879cd2a3dc20fc3c0a09408eae5}} 
+\index{Automata@{Automata}!PrintAutomata@{PrintAutomata}}
+\index{PrintAutomata@{PrintAutomata}!Automata@{Automata}}
+\doxysubsubsection{\texorpdfstring{PrintAutomata()}{PrintAutomata()}}
+{\footnotesize\ttfamily void Print\+Automata (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method prints the automata into the console. 
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{automata_8h}{automata.\+h}}\item 
+src/\mbox{\hyperlink{automata_8cc}{automata.\+cc}}\end{DoxyCompactItemize}

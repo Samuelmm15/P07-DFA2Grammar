@@ -1,0 +1,185 @@
+\hypertarget{classState}{}\doxysection{State Class Reference}
+\label{classState}\index{State@{State}}
+
+
+This class contains the different states of the automata.  
+
+
+
+
+{\ttfamily \#include $<$state.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classState_a790355057d12e9c1ce7643551c16fecd}{State}} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor of the different states. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classState_a6852634c51e30fa7d2c00556fb8e1fad}{$\sim$\+State}} ()
+\begin{DoxyCompactList}\small\item\em This is the destructor of the different states. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classState_aa70c8c50e7bfaf96cb8ef4e7c24a68a7}{set\+State}} (std\+::string state\+\_\+number)
+\begin{DoxyCompactList}\small\item\em This method sets the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classState_a5239ceb4205a06739f744eeb5f9f0fe4}{set\+Transitions}} (\mbox{\hyperlink{classTransition}{Transition}} transition)
+\begin{DoxyCompactList}\small\item\em This method sets the different transitions of the state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classState_aa6a69c575c3e504d7b3c215e0129f380}{set\+Final\+State}} (bool final\+\_\+state)
+\begin{DoxyCompactList}\small\item\em This method sets the final state. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classState_aab663cbeb86a6dd7a87b574e9409113d}{set\+Number\+Transitions}} (int number\+\_\+transitions)
+\begin{DoxyCompactList}\small\item\em This method sets the number of transitions of the state. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classState_acceae6b5724271d877e9db53c42f82ce}{get\+State}} ()
+\begin{DoxyCompactList}\small\item\em This method gets the state. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classState_ae95e32b73e1403c1ca5c70165e909840}{get\+Final\+State}} ()
+\begin{DoxyCompactList}\small\item\em This method gets the final state. \end{DoxyCompactList}\item 
+std\+::vector$<$ \mbox{\hyperlink{classTransition}{Transition}} $>$ \mbox{\hyperlink{classState_aa8207853ea480485ea1fc838e9ac7eed}{get\+Transition}} ()
+\begin{DoxyCompactList}\small\item\em This method returns the vector of transitions of the state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classState_a35cbd257cfb5e32938783e30948e4d3e}\label{classState_a35cbd257cfb5e32938783e30948e4d3e}} 
+int {\bfseries get\+Number\+Transitions} ()
+\item 
+void \mbox{\hyperlink{classState_a589603bed4c874b9e6a8125e77f7eb70}{Print\+State}} ()
+\begin{DoxyCompactList}\small\item\em This method prints the state and the different information. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This class contains the different states of the automata. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classState_a790355057d12e9c1ce7643551c16fecd}\label{classState_a790355057d12e9c1ce7643551c16fecd}} 
+\index{State@{State}!State@{State}}
+\index{State@{State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{State()}{State()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classState}{State}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the constructor of the different states. 
+
+\mbox{\Hypertarget{classState_a6852634c51e30fa7d2c00556fb8e1fad}\label{classState_a6852634c51e30fa7d2c00556fb8e1fad}} 
+\index{State@{State}!````~State@{$\sim$State}}
+\index{````~State@{$\sim$State}!State@{State}}
+\doxysubsubsection{\texorpdfstring{$\sim$State()}{~State()}}
+{\footnotesize\ttfamily $\sim$\mbox{\hyperlink{classState}{State}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the destructor of the different states. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classState_ae95e32b73e1403c1ca5c70165e909840}\label{classState_ae95e32b73e1403c1ca5c70165e909840}} 
+\index{State@{State}!getFinalState@{getFinalState}}
+\index{getFinalState@{getFinalState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{getFinalState()}{getFinalState()}}
+{\footnotesize\ttfamily bool get\+Final\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method gets the final state. 
+
+\begin{DoxyReturn}{Returns}
+true if the state is final. 
+
+false if the state is not final. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_acceae6b5724271d877e9db53c42f82ce}\label{classState_acceae6b5724271d877e9db53c42f82ce}} 
+\index{State@{State}!getState@{getState}}
+\index{getState@{getState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{getState()}{getState()}}
+{\footnotesize\ttfamily std\+::string get\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method gets the state. 
+
+\begin{DoxyReturn}{Returns}
+std\+::string is the number of the state. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_aa8207853ea480485ea1fc838e9ac7eed}\label{classState_aa8207853ea480485ea1fc838e9ac7eed}} 
+\index{State@{State}!getTransition@{getTransition}}
+\index{getTransition@{getTransition}!State@{State}}
+\doxysubsubsection{\texorpdfstring{getTransition()}{getTransition()}}
+{\footnotesize\ttfamily std\+::vector$<$ \mbox{\hyperlink{classTransition}{Transition}} $>$ get\+Transition (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method returns the vector of transitions of the state. 
+
+\begin{DoxyReturn}{Returns}
+std\+::vector$<$\+Transition$>$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classState_a589603bed4c874b9e6a8125e77f7eb70}\label{classState_a589603bed4c874b9e6a8125e77f7eb70}} 
+\index{State@{State}!PrintState@{PrintState}}
+\index{PrintState@{PrintState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{PrintState()}{PrintState()}}
+{\footnotesize\ttfamily void Print\+State (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method prints the state and the different information. 
+
+\mbox{\Hypertarget{classState_aa6a69c575c3e504d7b3c215e0129f380}\label{classState_aa6a69c575c3e504d7b3c215e0129f380}} 
+\index{State@{State}!setFinalState@{setFinalState}}
+\index{setFinalState@{setFinalState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{setFinalState()}{setFinalState()}}
+{\footnotesize\ttfamily void set\+Final\+State (\begin{DoxyParamCaption}\item[{bool}]{final\+\_\+state }\end{DoxyParamCaption})}
+
+
+
+This method sets the final state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em final\+\_\+state} & is the final state of the automata. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classState_aab663cbeb86a6dd7a87b574e9409113d}\label{classState_aab663cbeb86a6dd7a87b574e9409113d}} 
+\index{State@{State}!setNumberTransitions@{setNumberTransitions}}
+\index{setNumberTransitions@{setNumberTransitions}!State@{State}}
+\doxysubsubsection{\texorpdfstring{setNumberTransitions()}{setNumberTransitions()}}
+{\footnotesize\ttfamily void set\+Number\+Transitions (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+transitions }\end{DoxyParamCaption})}
+
+
+
+This method sets the number of transitions of the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+transitions} & is the number of transitions of the state. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classState_aa70c8c50e7bfaf96cb8ef4e7c24a68a7}\label{classState_aa70c8c50e7bfaf96cb8ef4e7c24a68a7}} 
+\index{State@{State}!setState@{setState}}
+\index{setState@{setState}!State@{State}}
+\doxysubsubsection{\texorpdfstring{setState()}{setState()}}
+{\footnotesize\ttfamily void set\+State (\begin{DoxyParamCaption}\item[{std\+::string}]{state\+\_\+number }\end{DoxyParamCaption})}
+
+
+
+This method sets the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em state} & is the state to set. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classState_a5239ceb4205a06739f744eeb5f9f0fe4}\label{classState_a5239ceb4205a06739f744eeb5f9f0fe4}} 
+\index{State@{State}!setTransitions@{setTransitions}}
+\index{setTransitions@{setTransitions}!State@{State}}
+\doxysubsubsection{\texorpdfstring{setTransitions()}{setTransitions()}}
+{\footnotesize\ttfamily void set\+Transitions (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classTransition}{Transition}}}]{transition }\end{DoxyParamCaption})}
+
+
+
+This method sets the different transitions of the state. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em transition} & is the transition to set to the state. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{state_8h}{state.\+h}}\item 
+src/\mbox{\hyperlink{state_8cc}{state.\+cc}}\end{DoxyCompactItemize}

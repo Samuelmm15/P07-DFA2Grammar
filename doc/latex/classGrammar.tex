@@ -1,0 +1,191 @@
+\hypertarget{classGrammar}{}\doxysection{Grammar Class Reference}
+\label{classGrammar}\index{Grammar@{Grammar}}
+
+
+This is the class that represents the grammar.  
+
+
+
+
+{\ttfamily \#include $<$grammar.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGrammar_a73d5a98c73783283038bbc5d296b023d}{Grammar}} ()
+\begin{DoxyCompactList}\small\item\em This is the constructor of the object grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_a1620821376672d76417be2f6e05280ff}{set\+Number\+Of\+Terminal\+Symbols}} (int number\+\_\+of\+\_\+terminal\+\_\+symbols)
+\begin{DoxyCompactList}\small\item\em This method adds the number of terminal symbols of the grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_aafa4e44b69eac33abfa38b5d7ec18d95}{set\+Number\+Of\+Non\+Terminal\+Symbols}} (int number\+\_\+of\+\_\+non\+\_\+terminal\+\_\+symbols)
+\begin{DoxyCompactList}\small\item\em This method adds the number of non terminal symbols of the grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_a0d0b5e5ad682e6b2775bed86921f3e88}{set\+Terminal\+Symbols}} (std\+::vector$<$ std\+::string $>$ terminal\+\_\+symbols)
+\begin{DoxyCompactList}\small\item\em This method adds the terminal symbols to the grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_abc9338eadadf79a4189d982d24b494c1}{set\+Non\+Terminal\+Symbols}} (std\+::vector$<$ std\+::string $>$ non\+\_\+terminal\+\_\+symbols)
+\begin{DoxyCompactList}\small\item\em This method adds the non terminal symbols to the grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_a162a1d689c1213dbc8fa64356fe92212}{set\+Initial\+Symbol}} (std\+::string initial\+\_\+symbol)
+\begin{DoxyCompactList}\small\item\em This method adds the initial symbol to the grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_a95819543389c2699e597f41c30b2b059}{set\+Number\+Of\+Productions}} (int number\+\_\+of\+\_\+productions)
+\begin{DoxyCompactList}\small\item\em This method adds the number of productions of the grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_a6810b2a7966301a8029a49969135439b}{set\+Productions}} (std\+::vector$<$ std\+::string $>$ productions)
+\begin{DoxyCompactList}\small\item\em This method adds the productions to the grammar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_a29a2e8a3e410d5993dc34e6aa3fe5351}{Print\+Grammar}} ()
+\begin{DoxyCompactList}\small\item\em This method prints the grammar in the console. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classGrammar_a99ec5585d9cace5cb177d4de486eb09b}{Print\+Grammar\+To\+File}} (std\+::string file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em This method prints the grammar into an output file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the class that represents the grammar. 
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGrammar_a73d5a98c73783283038bbc5d296b023d}\label{classGrammar_a73d5a98c73783283038bbc5d296b023d}} 
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\index{Grammar@{Grammar}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{Grammar()}{Grammar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classGrammar}{Grammar}} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This is the constructor of the object grammar. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGrammar_a29a2e8a3e410d5993dc34e6aa3fe5351}\label{classGrammar_a29a2e8a3e410d5993dc34e6aa3fe5351}} 
+\index{Grammar@{Grammar}!PrintGrammar@{PrintGrammar}}
+\index{PrintGrammar@{PrintGrammar}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{PrintGrammar()}{PrintGrammar()}}
+{\footnotesize\ttfamily void Print\+Grammar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This method prints the grammar in the console. 
+
+\mbox{\Hypertarget{classGrammar_a99ec5585d9cace5cb177d4de486eb09b}\label{classGrammar_a99ec5585d9cace5cb177d4de486eb09b}} 
+\index{Grammar@{Grammar}!PrintGrammarToFile@{PrintGrammarToFile}}
+\index{PrintGrammarToFile@{PrintGrammarToFile}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{PrintGrammarToFile()}{PrintGrammarToFile()}}
+{\footnotesize\ttfamily void Print\+Grammar\+To\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+This method prints the grammar into an output file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & Is the name of the output file. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrammar_a162a1d689c1213dbc8fa64356fe92212}\label{classGrammar_a162a1d689c1213dbc8fa64356fe92212}} 
+\index{Grammar@{Grammar}!setInitialSymbol@{setInitialSymbol}}
+\index{setInitialSymbol@{setInitialSymbol}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{setInitialSymbol()}{setInitialSymbol()}}
+{\footnotesize\ttfamily void set\+Initial\+Symbol (\begin{DoxyParamCaption}\item[{std\+::string}]{initial\+\_\+symbol }\end{DoxyParamCaption})}
+
+
+
+This method adds the initial symbol to the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial\+\_\+symbol} & Is the initial symbol of the grammar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrammar_abc9338eadadf79a4189d982d24b494c1}\label{classGrammar_abc9338eadadf79a4189d982d24b494c1}} 
+\index{Grammar@{Grammar}!setNonTerminalSymbols@{setNonTerminalSymbols}}
+\index{setNonTerminalSymbols@{setNonTerminalSymbols}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{setNonTerminalSymbols()}{setNonTerminalSymbols()}}
+{\footnotesize\ttfamily void set\+Non\+Terminal\+Symbols (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{non\+\_\+terminal\+\_\+symbols }\end{DoxyParamCaption})}
+
+
+
+This method adds the non terminal symbols to the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em non\+\_\+terminal\+\_\+symbols} & Is the vector that contains the different non terminal symbols. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrammar_aafa4e44b69eac33abfa38b5d7ec18d95}\label{classGrammar_aafa4e44b69eac33abfa38b5d7ec18d95}} 
+\index{Grammar@{Grammar}!setNumberOfNonTerminalSymbols@{setNumberOfNonTerminalSymbols}}
+\index{setNumberOfNonTerminalSymbols@{setNumberOfNonTerminalSymbols}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{setNumberOfNonTerminalSymbols()}{setNumberOfNonTerminalSymbols()}}
+{\footnotesize\ttfamily void set\+Number\+Of\+Non\+Terminal\+Symbols (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+of\+\_\+non\+\_\+terminal\+\_\+symbols }\end{DoxyParamCaption})}
+
+
+
+This method adds the number of non terminal symbols of the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+of\+\_\+non\+\_\+terminal\+\_\+symbols} & Is the number of non terminal symbols to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrammar_a95819543389c2699e597f41c30b2b059}\label{classGrammar_a95819543389c2699e597f41c30b2b059}} 
+\index{Grammar@{Grammar}!setNumberOfProductions@{setNumberOfProductions}}
+\index{setNumberOfProductions@{setNumberOfProductions}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{setNumberOfProductions()}{setNumberOfProductions()}}
+{\footnotesize\ttfamily void set\+Number\+Of\+Productions (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+of\+\_\+productions }\end{DoxyParamCaption})}
+
+
+
+This method adds the number of productions of the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+of\+\_\+productions} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrammar_a1620821376672d76417be2f6e05280ff}\label{classGrammar_a1620821376672d76417be2f6e05280ff}} 
+\index{Grammar@{Grammar}!setNumberOfTerminalSymbols@{setNumberOfTerminalSymbols}}
+\index{setNumberOfTerminalSymbols@{setNumberOfTerminalSymbols}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{setNumberOfTerminalSymbols()}{setNumberOfTerminalSymbols()}}
+{\footnotesize\ttfamily void set\+Number\+Of\+Terminal\+Symbols (\begin{DoxyParamCaption}\item[{int}]{number\+\_\+of\+\_\+terminal\+\_\+symbols }\end{DoxyParamCaption})}
+
+
+
+This method adds the number of terminal symbols of the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em number\+\_\+of\+\_\+terminal\+\_\+symbols} & Is the number of terminal symbols to add. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrammar_a6810b2a7966301a8029a49969135439b}\label{classGrammar_a6810b2a7966301a8029a49969135439b}} 
+\index{Grammar@{Grammar}!setProductions@{setProductions}}
+\index{setProductions@{setProductions}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{setProductions()}{setProductions()}}
+{\footnotesize\ttfamily void set\+Productions (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{productions }\end{DoxyParamCaption})}
+
+
+
+This method adds the productions to the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em productions} & Is the different productions of the grammar. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classGrammar_a0d0b5e5ad682e6b2775bed86921f3e88}\label{classGrammar_a0d0b5e5ad682e6b2775bed86921f3e88}} 
+\index{Grammar@{Grammar}!setTerminalSymbols@{setTerminalSymbols}}
+\index{setTerminalSymbols@{setTerminalSymbols}!Grammar@{Grammar}}
+\doxysubsubsection{\texorpdfstring{setTerminalSymbols()}{setTerminalSymbols()}}
+{\footnotesize\ttfamily void set\+Terminal\+Symbols (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::string $>$}]{terminal\+\_\+symbols }\end{DoxyParamCaption})}
+
+
+
+This method adds the terminal symbols to the grammar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em terminal\+\_\+symbols} & Is the vector that contains the different terminal symbols. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{grammar_8h}{grammar.\+h}}\item 
+src/\mbox{\hyperlink{grammar_8cc}{grammar.\+cc}}\end{DoxyCompactItemize}
