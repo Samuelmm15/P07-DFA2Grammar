@@ -130,6 +130,13 @@ bool Automata::IsDFA() {
       return false;
     }
   }
+  for (int i = 0; i < states_.size(); i++) {
+    for (int j = 0; j < states_[i].getTransition().size(); j++) {
+      if (states_[i].getTransition()[j].getTransitionSymbol() == "&") {
+        return false;
+      }
+    }
+  }
   return true;
 };
 

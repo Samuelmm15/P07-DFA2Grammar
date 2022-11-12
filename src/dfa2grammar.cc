@@ -11,8 +11,6 @@
  * 
  */
 
-/// FALTA COMPROBAR SI SE TRATA DE UN DFA O DE UN NFA.
-
 #include <iostream>
 #include <string>
 #include <vector>
