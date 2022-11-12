@@ -1,7 +1,7 @@
 /**
  * @file grammar.h
  * @author Samuel Martín Morales (alu0101359526@ull.edu.es)
- * @brief
+ * @brief This file contains the grammar class.
  * @version 0.1
  * @date 2022-11-10
  * @signature Computabilidad y Algoritmia.
@@ -18,6 +18,10 @@
 
 #pragma once
 
+/**
+ * @brief This is the class that represents the grammar.
+ * 
+ */
 class Grammar {
  public:
   Grammar();

@@ -1,7 +1,7 @@
 /**
  * @file grammar.cc
  * @author Samuel Martín Morales (alu0101359526@ull.edu.es)
- * @brief
+ * @brief This file contains the implementation of the grammar class.
  * @version 0.1
  * @date 2022-11-10
  * @signature Computabilidad y Algoritmia.
@@ -13,38 +13,81 @@
 
 #include "../include/grammar.h"
 
+/**
+ * @brief This is the constructor of the object grammar.
+ * 
+ */
 Grammar::Grammar(){};
 
+/**
+ * @brief This method adds the number of terminal symbols of the grammar.
+ * 
+ * @param number_of_terminal_symbols Is the number of terminal symbols to add.
+ */
 void Grammar::setNumberOfTerminalSymbols(int number_of_terminal_symbols) {
   number_of_terminal_symbols_ = number_of_terminal_symbols;
 };
 
+/**
+ * @brief This method adds the number of non terminal symbols of the grammar.
+ * 
+ * @param number_of_non_terminal_symbols Is the number of non terminal symbols to add.
+ */
 void Grammar::setNumberOfNonTerminalSymbols(
     int number_of_non_terminal_symbols) {
   number_of_non_terminal_symbols_ = number_of_non_terminal_symbols;
 };
 
+/**
+ * @brief This method adds the terminal symbols to the grammar.
+ * 
+ * @param terminal_symbols Is the vector that contains the different terminal symbols.
+ */
 void Grammar::setTerminalSymbols(std::vector<std::string> terminal_symbols) {
   terminal_symbols_ = terminal_symbols;
 };
 
+/**
+ * @brief This method adds the non terminal symbols to the grammar.
+ * 
+ * @param non_terminal_symbols Is the vector that contains the different non terminal symbols.
+ */
 void Grammar::setNonTerminalSymbols(
     std::vector<std::string> non_terminal_symbols) {
   non_terminal_symbols_ = non_terminal_symbols;
 };
 
+/**
+ * @brief This method adds the initial symbol to the grammar.
+ * 
+ * @param initial_symbol Is the initial symbol of the grammar.
+ */
 void Grammar::setInitialSymbol(std::string initial_symbol) {
   initial_symbol_ = initial_symbol;
 };
 
+/**
+ * @brief This method adds the number of productions of the grammar.
+ * 
+ * @param number_of_productions 
+ */
 void Grammar::setNumberOfProductions(int number_of_productions) {
   number_of_productions_ = number_of_productions;
 };
 
+/**
+ * @brief This method adds the productions to the grammar.
+ * 
+ * @param productions Is the different productions of the grammar.
+ */
 void Grammar::setProductions(std::vector<std::string> productions) {
   productions_ = productions;
 };
 
+/**
+ * @brief This method prints the grammar in the console.
+ * 
+ */
 void Grammar::PrintGrammar() {
   std::cout << "Grmática generada a partir del DFA introducido:" << std::endl;
   std::cout << "Nº de símbolos terminales: " << number_of_terminal_symbols_
@@ -73,6 +116,11 @@ void Grammar::PrintGrammar() {
   }
 };
 
+/**
+ * @brief This method prints the grammar into an output file.
+ * 
+ * @param file_name Is the name of the output file.
+ */
 void Grammar::PrintGrammarToFile(std::string file_name) {
   std::fstream output_file;
   output_file.open(file_name, std::ios::out);

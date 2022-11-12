@@ -1,7 +1,7 @@
 /**
  * @file main.cc
  * @author Samuel Martín Morales (alu0101359526@ull.edu.es)
- * @brief
+ * @brief This file contains the main fuccion of the program.
  * @version 0.1
  * @date 2022-11-10
  * @signature Computabilidad y Algoritmia.
@@ -98,7 +98,7 @@ int main(int argc, char** argv) {
       std::cout << "Para más información haga uso de la opción -h o --help"
                 << std::endl;
       std::cout << std::endl;
-      return 2;  /// Salida con error de tipo 2
+      return 2;  /// Exit code 2
     }
 
   } else if (argc == 2) {

@@ -1,7 +1,7 @@
 /**
  * @file automata.cc
  * @author Samuel Martín Morales (alu0101359526@ull.edu.es)
- * @brief
+ * @brief This file contains the different methods of the automata class.
  * @version 0.1
  * @date 2022-11-10
  * @signature Computabilidad y Algoritmia.
@@ -125,10 +125,26 @@ Automata::Automata(std::vector<std::string> automata_file_lines_vector) {
  */
 Alphabet Automata::getAlphabet() { return alphabet_; };
 
+/**
+ * @brief This method returns the number of states of the automata.
+ * 
+ * @return std::vector<State> the vector of the different states of the automata.
+ */
 std::vector<State> Automata::getStates() { return states_; };
 
+/**
+ * @brief This method return the initial state of the automata.
+ * 
+ * @return std::string the initial state of the automata.
+ */
 std::string Automata::getInitialState() { return initial_state_; };
 
+/**
+ * @brief This method comprobe if an automata is a DFA or NFA automata.
+ * 
+ * @return true if it is a DFA automata.
+ * @return false if it is a NFA automata.
+ */
 bool Automata::IsDFA() {
   for (int i = 0; i < states_.size(); i++) {
     if (states_[i].getNumberTransitions() != alphabet_.getAlphabet().size()) {
@@ -145,6 +161,10 @@ bool Automata::IsDFA() {
   return true;
 };
 
+/**
+ * @brief This method prints the automata into the console.
+ * 
+ */
 void Automata::PrintAutomata() {
   std::cout << std::endl;
   std::cout << "Alfabeto del autómata: ";
@@ -204,28 +224,30 @@ bool Automata::DFAChainsValidation(std::string chain) {
   return chain_accepted;
 };
 
+/**
+ * @brief This method converts a NFA automata into a grammar.
+ * 
+ * @param automata_to_convert Is the automata that is going to be converted.
+ * @return Grammar the grammar that was converted from the automata.
+ */
 Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
-  /// Determinación de los símbolos terminales, que corresponden con el alfabeto
-  /// del automata.
+  /// First the number of terminal symbols.
   Grammar auxiliary_grammar;
   int number_of_terminal_symbols =
       automata_to_convert.getAlphabet().getAlphabet().size();
   auxiliary_grammar.setNumberOfTerminalSymbols(number_of_terminal_symbols);
-  /// Determinación de los distintos símbolos terminales que corresponden los
-  /// distintos símbolos terminales de la gramática.
+  /// Second the terminal symbols.
   std::vector<std::string> terminal_symbols;
   for (int i = 0; i < number_of_terminal_symbols; i++) {
     terminal_symbols.push_back(
         automata_to_convert.getAlphabet().getAlphabet()[i]);
   }
   auxiliary_grammar.setTerminalSymbols(terminal_symbols);
-  /// Determinación de los símbolos no terminales, que corresponden con los
-  /// estados del automata.
+  /// Third the number of non-terminal symbols.
   int number_of_non_terminal_symbols = automata_to_convert.getStates().size();
   auxiliary_grammar.setNumberOfNonTerminalSymbols(
       number_of_non_terminal_symbols);
-  /// Determinación de los distintos símbolos no terminales que corresponden los
-  /// distintos símbolos no terminales de la gramática.
+  /// Fordth the non-terminal symbols.
   std::vector<std::string> non_terminal_symbols;
   for (int i = 0; i < number_of_non_terminal_symbols; i++) {
     non_terminal_symbols.push_back(
@@ -233,12 +255,11 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
   }
   auxiliary_grammar.setNonTerminalSymbols(non_terminal_symbols);
 
-  /// Determinación del símbolo inicial de la gramática, que corresponde con el
-  /// estado inicial del automata.
+  /// Fifth the initial symbol.
   std::string initial_symbol = automata_to_convert.getInitialState();
   auxiliary_grammar.setInitialSymbol(initial_symbol);
 
-  /// Determinación del número de producciones de la gramática.
+  /// Sixth the number of productions.
   int number_of_productions = 0;
   for (int i = 0; i < automata_to_convert.getStates().size(); i++) {
     number_of_productions +=
@@ -246,7 +267,7 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
   }
   auxiliary_grammar.setNumberOfProductions(number_of_productions);
 
-  /// Determinación de las distintas producciones de la gramática.
+  /// Seventh the productions.
   std::vector<std::string> productions;
   for (int i = 0; i < automata_to_convert.getStates().size(); i++) {
     for (int j = 0;
