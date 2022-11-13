@@ -231,6 +231,7 @@ bool Automata::DFAChainsValidation(std::string chain) {
  * @return Grammar the grammar that was converted from the automata.
  */
 Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
+  std::string non_terminal_symbols_colection = "SABCDEFGHIJKLMNÑOPRSTUVWXYZ";
   /// First the number of terminal symbols.
   Grammar auxiliary_grammar;
   int number_of_terminal_symbols =
@@ -251,12 +252,17 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
   std::vector<std::string> non_terminal_symbols;
   for (int i = 0; i < number_of_non_terminal_symbols; i++) {
     non_terminal_symbols.push_back(
-        automata_to_convert.getStates()[i].getState());
+        non_terminal_symbols_colection.substr(i, 1));
   }
   auxiliary_grammar.setNonTerminalSymbols(non_terminal_symbols);
 
   /// Fifth the initial symbol.
   std::string initial_symbol = automata_to_convert.getInitialState();
+  for (int i = 0; i < automata_to_convert.getStates().size(); i++) {
+    if (automata_to_convert.getStates()[i].getState() == initial_symbol) {
+      initial_symbol = non_terminal_symbols[i];
+    }
+  }
   auxiliary_grammar.setInitialSymbol(initial_symbol);
 
   /// Sixth the number of productions.
@@ -274,7 +280,7 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
          j < automata_to_convert.getStates()[i].getNumberTransitions(); j++) {
       std::string auxiliary_string;
       auxiliary_string.push_back(
-          automata_to_convert.getStates()[i].getState()[0]);
+          non_terminal_symbols_colection[i]);  /// Non-terminal symbol.
       auxiliary_string.push_back('-');
       auxiliary_string.push_back('-');
       auxiliary_string.push_back('>');
@@ -282,15 +288,19 @@ Grammar Automata::ConvertToGrammar(Automata automata_to_convert) {
       auxiliary_string.push_back(automata_to_convert.getStates()[i]
                                      .getTransition()[j]
                                      .getTransitionSymbol()[0]);
-      auxiliary_string.push_back(automata_to_convert.getStates()[i]
-                                     .getTransition()[j]
-                                     .getTransitionState()[0]);
+      std::string auxiliary_string_state = automata_to_convert
+                                               .getStates()[i]
+                                               .getTransition()[j]
+                                               .getTransitionState();
+      auxiliary_string.push_back(
+          non_terminal_symbols_colection.substr(
+              std::stoi(auxiliary_string_state), 1)[0]);
       productions.push_back(auxiliary_string);
     }
     if (automata_to_convert.getStates()[i].getFinalState() == true) {
       std::string auxiliary_string;
       auxiliary_string.push_back(
-          automata_to_convert.getStates()[i].getState()[0]);
+          non_terminal_symbols_colection[i]);  /// Non-terminal symbol.
       auxiliary_string.push_back(' ');
       auxiliary_string.push_back('-');
       auxiliary_string.push_back('>');
