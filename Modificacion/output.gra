@@ -1,0 +1,19 @@
+2
+a
+b
+4
+S
+A
+B
+C
+S
+8
+S--> aS
+S--> bC
+A--> aB
+A--> bB
+B--> aB
+B--> bB
+B -> &
+C--> aC
+C--> bC
